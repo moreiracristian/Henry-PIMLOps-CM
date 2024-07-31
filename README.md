@@ -1,59 +1,56 @@
-# Project Title
+# PIMLOps Cristian Moreira
 
-A short description about the project and/or client.
+Una breve descripción sobre el proyecto y/o cliente.
 
-## Getting Started
+## Comenzando
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Estas instrucciones te permitirán obtener una copia del proyecto y ejecutarlo en tu máquina local para fines de desarrollo y pruebas. Consulta la sección de despliegue para obtener notas sobre cómo desplegar el proyecto en un sistema en vivo.
 
-### Prerequisites
+### Prerrequisitos
 
-The things you need before installing the software.
+Las cosas que necesitas antes de instalar el software.
 
-* You need this
-* And you need this
-* Oh, and don't forget this
+* Necesitas esto
+* Y necesitas esto
+* Oh, y no olvides esto
 
-### Installation
+### Instalación
 
-A step by step guide that will tell you how to get the development environment up and running.
+Una guía paso a paso que te dirá cómo configurar el entorno de desarrollo.
 
-```
-$ First step
-$ Another step
-$ Final step
-```
+$ Primer paso
+$ Otro paso
+$ Paso final
 
-## Usage
+## Uso
 
-A few examples of useful commands and/or tasks.
+Algunos ejemplos de comandos y/o tareas útiles.
 
-```
-$ First example
-$ Second example
-$ And keep this in mind
-```
+$ Primer ejemplo
+$ Segundo ejemplo
+$ Y ten esto en cuenta
 
-## Deployment
 
-Additional notes on how to deploy this on a live or release system. Explaining the most important branches, what pipelines they trigger and how to update the database (if anything special).
+## Despliegue
 
-### Server
+Notas adicionales sobre cómo desplegar esto en un sistema en vivo o de lanzamiento. Explicando las ramas más importantes, qué pipelines desencadenan y cómo actualizar la base de datos (si hay algo especial).
 
-* Live:
-* Release:
-* Development:
+### Servidor
 
-### Branches
+* En vivo:
+* Lanzamiento:
+* Desarrollo:
+
+### Ramas
 
 * Master:
 * Feature:
 * Bugfix:
 * etc...
 
-## Additional Documentation and Acknowledgments
+## Documentación Adicional y Agradecimientos
 
-* Project folder on server:
-* Confluence link:
-* Asana board:
+* Carpeta del proyecto en el servidor:
+* Enlace de Confluence:
+* Tablero de Asana:
 * etc...
