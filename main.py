@@ -7,8 +7,8 @@ from sklearn.neighbors import NearestNeighbors
 app = FastAPI()
 
 # Leer los archivos Parquet
-df_credits = pd.read_parquet('D:/CM_R480/HENRY/Módulos/PI LABs/Henry-PIMLOps-CM/data/procesado/credits_pilabs.parquet')
-df_movies = pd.read_parquet('D:/CM_R480/HENRY/Módulos/PI LABs/Henry-PIMLOps-CM/data/procesado/movies_pilabs.parquet')
+df_credits = pd.read_parquet('data/procesado/credits_pilabs.parquet')
+df_movies = pd.read_parquet('data/procesado/movies_pilabs.parquet')
 
 
 # Convertir la columna 'release_date' a datetime
