@@ -1,5 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.neighbors import NearestNeighbors
 
 
 app = FastAPI()
@@ -69,3 +71,36 @@ def get_director(nombre_director: str):
             "revenue": film['revenue']
         })
     return response
+
+
+# Codificar los géneros
+encoder = OneHotEncoder()
+genres_encoded = encoder.fit_transform(df_movies['genre_name'].values.reshape(-1, 1))
+genres_encoded_array = genres_encoded.toarray()
+
+# Crear y ajustar el modelo de recomendación
+recommender = NearestNeighbors(metric='cosine')
+recommender.fit(genres_encoded_array)
+
+# Endpoint para obtener recomendaciones
+@app.get("/recommend/")
+def get_recommendations(movie_title: str, num_recommendations: int = 5):
+    try:
+        # Buscar el índice de la película
+        movie_index = df_movies[df_movies['title'].str.lower() == movie_title.lower()].index[0]
+    except IndexError:
+        raise HTTPException(status_code=404, detail=f"La película '{movie_title}' no se encontró en nuestra base de datos.")
+
+    if movie_index >= len(genres_encoded_array):
+        raise HTTPException(status_code=400, detail="El índice de la película está fuera de los límites.")
+
+    # Obtener recomendaciones
+    distances, indices = recommender.kneighbors(genres_encoded_array[movie_index].reshape(1, -1), n_neighbors=num_recommendations+1)
+
+    # Excluir la película de entrada de las recomendaciones
+    recommended_indices = indices.flatten()[1:]
+
+    # Extraer los títulos de las películas recomendadas
+    recommended_movie_titles = df_movies.iloc[recommended_indices]['title'].values.tolist()
+
+    return {"recommendations": recommended_movie_titles}
