@@ -9,19 +9,9 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 - **FastAPI**: Framework para la creación de APIs rápidas y eficientes.
 - **Pandas**: Procesamiento y manipulación de datos.
-- **Scikit-learn**: Modelado y recomendación utilizando `NearestNeighbors`.
+- **Scikit-learn**: Modelado y recomendación utilizando `NearestNeighbors`
 - **OneHotEncoder**: Codificación de géneros para el modelo de recomendación.
 - **Python**: Lenguaje principal del proyecto.
-
----
-
-## Tabla de Contenidos 📋
-
-1. [Instalación](#instalación)
-2. [Características Principales](#características-principales)
-3. [EndPoints](#endpoints)
-4. [Requisitos del Sistema](#requisitos-del-sistema)
-5. [Ejecución del Proyecto](#ejecución-del-proyecto)
 
 ---
 
@@ -51,7 +41,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 ---
 
-## Características Principales ✨
+## Características principales ✨
 
 1. **Consultas de estadísticas por fechas:**
    - Número de películas estrenadas en un mes o día específico.
@@ -67,13 +57,8 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 ---
 
-## EndPoints 🚀
+## Endpoints 🚀
 
-### 1. **Cantidad de Filmaciones por Mes**
-   ```http
-   GET /cantidad_filmaciones_mes/{mes}
-
-Endpoints 🚀
 ### 1. **Cantidad de Filmaciones por Mes**
     Ruta: /cantidad_filmaciones_mes/{mes}
     Descripción: Retorna la cantidad de películas estrenadas en un mes específico.
