@@ -62,9 +62,9 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 ### 1. **Cantidad de Filmaciones por Mes**
     ```
     Ruta: /cantidad_filmaciones_mes/{mes}
+    ```
     Descripción: Retorna la cantidad de películas estrenadas en un mes específico.
     Ejemplo: /cantidad_filmaciones_mes/enero
-    ```
 
 ### 2. **Cantidad de Filmaciones por Día**
     ```
@@ -112,7 +112,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
     ```
 
 ## Arquitectura del Proyecto
-    ```css
+    ```
     📁 data/
     └── 📁 procesado/
         ├── credits_pilabs.parquet
@@ -156,10 +156,10 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 ## Ejecución del Proyecto ▶️
 
     1. Inicia la aplicación FastAPI:
-        ```bash 
+        ```
         uvicorn main:app --reload
         ```
-        
+
     2. Accede a la documentación interactiva de la API en: http://127.0.0.1:8000/docs
 
     3. Explora los endpoints y prueba sus funcionalidades.
