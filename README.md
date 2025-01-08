@@ -1,10 +1,10 @@
-# Sistema de recomendación de relículas con FastAPI 🎥
+# Sistema de recomendación de películas con FastAPI 🎥
 
 Este proyecto es una API desarrollada con **FastAPI** que permite realizar diversas consultas sobre una base de datos de películas y obtener recomendaciones analisis basadas en similitudes de géneros combinando procesamiento de datos y machine learning. Está diseñada para explorar datos procesados y proporcionar información útil de manera rápida y eficiente.
 
 ---
 
-## Tecnologías Utilizadas 
+## Tecnologías utilizadas 
 
 - **FastAPI**: Framework para la creación de APIs rápidas y eficientes.
 - **Pandas**: Procesamiento y manipulación de datos.
@@ -110,7 +110,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
     
 ---
 
-## Arquitectura del Proyecto
+## Arquitectura del proyecto
    
     📁 data/
     └── 📁 procesado/
@@ -128,7 +128,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
     
 ---
 
-## Detalles Técnicos
+## Detalles técnicos
 
 1. **Preprocesamiento:**
 
@@ -142,7 +142,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
     
 ---
 
-## Requisitos del Sistema 🖥️
+## Requisitos del sistema 🖥️
 
 - Python 3.9+
 - FastAPI
@@ -152,7 +152,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 ---
 
-## Ejecución del Proyecto ▶️
+## Ejecución del proyecto ▶️
 
 1. Inicia la aplicación FastAPI:
     ```bash
@@ -163,11 +163,8 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 3. Explora los endpoints y prueba sus funcionalidades.
 
-
----
 ---
 
 ## Autor 🧑‍💻
 
-### PIMLOps Henry
-### Proyecto de Cristian Moreira
+### PIMLOps Henry. Proyecto de Cristian Moreira
