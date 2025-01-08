@@ -1,56 +1,155 @@
-# PIMLOps Cristian Moreira
+# PIMLOps Proyecto de Cristian Moreira
+# Consultas y recomendaciones de relículas con FastAPI 🎥
 
-Una breve descripción sobre el proyecto y/o cliente.
+Este proyecto es una API desarrollada con **FastAPI** que permite realizar diversas consultas sobre una base de datos de películas y obtener recomendaciones basadas en similitudes de géneros. Está diseñada para explorar datos procesados y proporcionar información útil de manera rápida y eficiente.
 
-## Comenzando
+---
 
-Estas instrucciones te permitirán obtener una copia del proyecto y ejecutarlo en tu máquina local para fines de desarrollo y pruebas. Consulta la sección de despliegue para obtener notas sobre cómo desplegar el proyecto en un sistema en vivo.
+## Tecnologías Utilizadas
 
-### Prerrequisitos
+- **FastAPI**: Framework para la creación de APIs rápidas y eficientes.
+- **Pandas**: Procesamiento y manipulación de datos.
+- **Scikit-learn**: Modelado y recomendación utilizando `NearestNeighbors`.
+- **OneHotEncoder**: Codificación de géneros para el modelo de recomendación.
+- **Python**: Lenguaje principal del proyecto.
 
-Las cosas que necesitas antes de instalar el software.
+---
 
-* Necesitas esto
-* Y necesitas esto
-* Oh, y no olvides esto
+## Tabla de Contenidos 📋
 
-### Instalación
+1. [Instalación](#instalación)
+2. [Características Principales](#características-principales)
+3. [EndPoints](#endpoints)
+4. [Requisitos del Sistema](#requisitos-del-sistema)
+5. [Ejecución del Proyecto](#ejecución-del-proyecto)
 
-Una guía paso a paso que te dirá cómo configurar el entorno de desarrollo.
+---
 
-$ Primer paso
-$ Otro paso
-$ Paso final
+## Instalación 🛠️
 
-## Uso
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/moreiracristian/Henry-PIMLOps-CM.git
+    cd Henry-PIMLOps-CM
+    ```
 
-Algunos ejemplos de comandos y/o tareas útiles.
+2. Crea un entorno virtual y actívalo:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate    # En Linux/Mac
+    venv\Scripts\activate       # En Windows
+    ```
 
-$ Primer ejemplo
-$ Segundo ejemplo
-$ Y ten esto en cuenta
+3. Instala las dependencias necesarias:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Asegúrate de que los datos necesarios están en el directorio `data/procesado`:
+   - `credits_pilabs.parquet`
+   - `movies_pilabs.parquet`
+
+---
+
+## Características Principales ✨
+
+1. **Consultas de estadísticas por fechas:**
+   - Número de películas estrenadas en un mes o día específico.
+   
+2. **Búsqueda de detalles de películas:**
+   - Score, año de estreno y número de votos.
+
+3. **Análisis de contribución:**
+   - Información sobre actores y directores, incluyendo métricas de retorno financiero.
+
+4. **Sistema de recomendación:**
+   - Basado en similitudes de género utilizando el algoritmo `Nearest Neighbors`.
+
+---
+
+## EndPoints 🚀
+
+### 1. **Cantidad de Filmaciones por Mes**
+   ```http
+   GET /cantidad_filmaciones_mes/{mes}
+
+Endpoints 🚀
+### 1. **Cantidad de Filmaciones por Mes**
+    Ruta: /cantidad_filmaciones_mes/{mes}
+    Descripción: Retorna la cantidad de películas estrenadas en un mes específico.
+    Ejemplo: /cantidad_filmaciones_mes/enero
+
+### 2. **Cantidad de Filmaciones por Día**
+    Ruta: /cantidad_filmaciones_dia/{dia}
+    Descripción: Retorna la cantidad de películas estrenadas en un día específico de la semana.
+    Ejemplo: /cantidad_filmaciones_dia/lunes
+
+### 3. **Score de una Película**
+    Ruta: /score_titulo/{titulo_de_la_filmacion}
+    Descripción: Muestra el título, año de estreno y popularidad de una película.
+    Ejemplo: /score_titulo/Titanic
+
+### 4. **Votos de una Película**
+    Ruta: /votos_titulo/{titulo_de_la_filmacion}
+    Descripción: Retorna la cantidad de votos, promedio y año de estreno de una película.
+    Ejemplo: /votos_titulo/Titanic
+
+### 5. **Información de un Actor**
+    Ruta: /get_actor/{nombre_actor}
+    Descripción: Detalla la cantidad de filmaciones, retorno total y promedio de un actor.
+    Ejemplo: /get_actor/Leonardo%20DiCaprio
+
+### 6. **Información de un Director**
+    Ruta: /get_director/{nombre_director}
+    Descripción: Proporciona datos de las películas dirigidas por un director, incluyendo presupuesto, ingresos y retorno.
+    Ejemplo: /get_director/Christopher%20Nolan
+
+### 7. **Recomendación de Películas**
+    Ruta: /recommend/
+    Parámetros:
+    movie_title (str): Título de la película de referencia.
+    num_recommendations (int, opcional): Número de recomendaciones (por defecto 5).
+    Descripción: Genera una lista de películas similares en base a géneros.
+    Ejemplo: /recommend/?movie_title=Inception&num_recommendations=5
 
 
-## Despliegue
+## Arquitectura del Proyecto
+```css
+📁 data/
+  └── 📁 procesado/
+      ├── credits_pilabs.parquet
+      └── movies_pilabs.parquet
+📄 main.py
+📄 requirements.txt
 
-Notas adicionales sobre cómo desplegar esto en un sistema en vivo o de lanzamiento. Explicando las ramas más importantes, qué pipelines desencadenan y cómo actualizar la base de datos (si hay algo especial).
 
-### Servidor
+## Detalles Técnicos
+    1. Preprocesamiento:
 
-* En vivo:
-* Lanzamiento:
-* Desarrollo:
+        Los archivos .parquet son leídos y procesados con pandas.
+        La columna release_date se convierte a formato datetime para consultas temporales.
+        Los géneros son codificados mediante OneHotEncoder para alimentar al modelo de recomendaciones.
+    
+    2. Modelo de Recomendación:
 
-### Ramas
+        Se utiliza NearestNeighbors con métrica de similitud coseno para encontrar películas similares.
 
-* Master:
-* Feature:
-* Bugfix:
-* etc...
 
-## Documentación Adicional y Agradecimientos
+## Requisitos del Sistema 🖥️
 
-* Carpeta del proyecto en el servidor:
-* Enlace de Confluence:
-* Tablero de Asana:
-* etc...
+    - Python 3.9+
+    - FastAPI
+    - Pandas
+    - Scikit-learn
+    - Archivos parquet con los datos procesados.
+
+
+## Ejecución del Proyecto ▶️
+
+1. Inicia la aplicación FastAPI:
+    ```bash 
+    uvicorn main:app --reload
+
+2 .Accede a la documentación interactiva de la API en: http://127.0.0.1:8000/docs
+
+3. Explora los endpoints y prueba sus funcionalidades.
