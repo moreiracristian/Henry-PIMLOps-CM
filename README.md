@@ -163,8 +163,9 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 3. Explora los endpoints y prueba sus funcionalidades.
 
+---
 
-### Autor 🧑‍💻
+## Autor 🧑‍💻
 
-# PIMLOps Henry
-# Proyecto de Cristian Moreira
+### PIMLOps Henry
+### Proyecto de Cristian Moreira
