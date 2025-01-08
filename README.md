@@ -1,11 +1,11 @@
 # PIMLOps Proyecto de Cristian Moreira
-# Consultas y recomendaciones de relículas con FastAPI 🎥
+# Sistema de recomendación de relículas con FastAPI 🎥
 
-Este proyecto es una API desarrollada con **FastAPI** que permite realizar diversas consultas sobre una base de datos de películas y obtener recomendaciones basadas en similitudes de géneros. Está diseñada para explorar datos procesados y proporcionar información útil de manera rápida y eficiente.
+Este proyecto es una API desarrollada con **FastAPI** que permite realizar diversas consultas sobre una base de datos de películas y obtener recomendaciones analisis basadas en similitudes de géneros combinando procesamiento de datos y machine learning. Está diseñada para explorar datos procesados y proporcionar información útil de manera rápida y eficiente.
 
 ---
 
-## Tecnologías Utilizadas
+## Tecnologías Utilizadas 
 
 - **FastAPI**: Framework para la creación de APIs rápidas y eficientes.
 - **Pandas**: Procesamiento y manipulación de datos.
@@ -109,6 +109,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
     Descripción: Genera una lista de películas similares en base a géneros.
     Ejemplo: /recommend/?movie_title=Inception&num_recommendations=5
     
+---
 
 ## Arquitectura del Proyecto
    
@@ -139,7 +140,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
     2. **Modelo de Recomendación:**
 
         - Se utiliza `NearestNeighbors` con métrica de similitud coseno para encontrar películas similares.
-
+    
 ---
 
 ## Requisitos del Sistema 🖥️
