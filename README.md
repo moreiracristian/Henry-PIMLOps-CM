@@ -60,59 +60,58 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 ## Endpoints 🚀
 
 ### 1. **Cantidad de Filmaciones por Mes**
-    ```
+    
     Ruta: /cantidad_filmaciones_mes/{mes}
-    ```
     Descripción: Retorna la cantidad de películas estrenadas en un mes específico.
     Ejemplo: /cantidad_filmaciones_mes/enero
 
 ### 2. **Cantidad de Filmaciones por Día**
-    ```
+    
     Ruta: /cantidad_filmaciones_dia/{dia}
     Descripción: Retorna la cantidad de películas estrenadas en un día específico de la semana.
     Ejemplo: /cantidad_filmaciones_dia/lunes
-    ```
+    
 
 ### 3. **Score de una Película**
-    ```
+    
     Ruta: /score_titulo/{titulo_de_la_filmacion}
     Descripción: Muestra el título, año de estreno y popularidad de una película.
     Ejemplo: /score_titulo/Titanic
-    ```
+    
 
 ### 4. **Votos de una Película**
-    ```
+    
     Ruta: /votos_titulo/{titulo_de_la_filmacion}
     Descripción: Retorna la cantidad de votos, promedio y año de estreno de una película.
     Ejemplo: /votos_titulo/Titanic
-    ```
+    
 
 ### 5. **Información de un Actor**
-    ```
+    
     Ruta: /get_actor/{nombre_actor}
     Descripción: Detalla la cantidad de filmaciones, retorno total y promedio de un actor.
     Ejemplo: /get_actor/Leonardo%20DiCaprio
-    ```
+    
 
 ### 6. **Información de un Director**
-    ```
+    
     Ruta: /get_director/{nombre_director}
     Descripción: Proporciona datos de las películas dirigidas por un director, incluyendo presupuesto, ingresos y retorno.
     Ejemplo: /get_director/Christopher%20Nolan
-    ```
+    
 
 ### 7. **Recomendación de Películas**
-    ```
+    
     Ruta: /recommend/
     Parámetros:
     movie_title (str): Título de la película de referencia.
     num_recommendations (int, opcional): Número de recomendaciones (por defecto 5).
     Descripción: Genera una lista de películas similares en base a géneros.
     Ejemplo: /recommend/?movie_title=Inception&num_recommendations=5
-    ```
+    
 
 ## Arquitectura del Proyecto
-    ```
+   
     📁 data/
     └── 📁 procesado/
         ├── credits_pilabs.parquet
@@ -126,7 +125,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
     📁 src/
         └── 📄 requirements.txt
     📄 main.py
-    ```
+    
 ---
 
 ## Detalles Técnicos
@@ -156,7 +155,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 ## Ejecución del Proyecto ▶️
 
     1. Inicia la aplicación FastAPI:
-        ```
+        ```bash
         uvicorn main:app --reload
         ```
 
