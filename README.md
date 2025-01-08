@@ -124,13 +124,14 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 ---
 
 ## Detalles Técnicos
-    1. Preprocesamiento:
+
+    1. **Preprocesamiento:**
 
         - Los archivos `parquet` son leídos y procesados con `pandas`
         - La columna `release_date` se convierte a formato `datetime` para consultas temporales.
         - Los géneros son codificados mediante `OneHotEncoder` para alimentar al modelo de recomendaciones.
     
-    2. Modelo de Recomendación:
+    2. **Modelo de Recomendación:**
 
         - Se utiliza `NearestNeighbors` con métrica de similitud coseno para encontrar películas similares.
 
@@ -148,12 +149,10 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 ## Ejecución del Proyecto ▶️
 
-1. Inicia la aplicación FastAPI:
-    ```bash 
-    uvicorn main:app --reload
+    1. Inicia la aplicación FastAPI:
+        ```bash 
+        uvicorn main:app --reload
 
-2 .Accede a la documentación interactiva de la API en: http://127.0.0.1:8000/docs
+    2. Accede a la documentación interactiva de la API en: http://127.0.0.1:8000/docs
 
-3. Explora los endpoints y prueba sus funcionalidades.
-
----
+    3. Explora los endpoints y prueba sus funcionalidades.
