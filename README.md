@@ -126,13 +126,13 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 ## Detalles Técnicos
     1. Preprocesamiento:
 
-        Los archivos .parquet son leídos y procesados con pandas.
-        La columna release_date se convierte a formato datetime para consultas temporales.
-        Los géneros son codificados mediante OneHotEncoder para alimentar al modelo de recomendaciones.
+        - Los archivos `parquet` son leídos y procesados con `pandas`
+        - La columna `release_date` se convierte a formato `datetime` para consultas temporales.
+        - Los géneros son codificados mediante `OneHotEncoder` para alimentar al modelo de recomendaciones.
     
     2. Modelo de Recomendación:
 
-        Se utiliza NearestNeighbors con métrica de similitud coseno para encontrar películas similares.
+        - Se utiliza `NearestNeighbors` con métrica de similitud coseno para encontrar películas similares.
 
 ---
 
