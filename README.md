@@ -60,36 +60,43 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 ## Endpoints 🚀
 
 ### 1. **Cantidad de Filmaciones por Mes**
+    ```
     Ruta: /cantidad_filmaciones_mes/{mes}
     Descripción: Retorna la cantidad de películas estrenadas en un mes específico.
     Ejemplo: /cantidad_filmaciones_mes/enero
 
 ### 2. **Cantidad de Filmaciones por Día**
+    ```
     Ruta: /cantidad_filmaciones_dia/{dia}
     Descripción: Retorna la cantidad de películas estrenadas en un día específico de la semana.
     Ejemplo: /cantidad_filmaciones_dia/lunes
 
 ### 3. **Score de una Película**
+    ```
     Ruta: /score_titulo/{titulo_de_la_filmacion}
     Descripción: Muestra el título, año de estreno y popularidad de una película.
     Ejemplo: /score_titulo/Titanic
 
 ### 4. **Votos de una Película**
+    ```
     Ruta: /votos_titulo/{titulo_de_la_filmacion}
     Descripción: Retorna la cantidad de votos, promedio y año de estreno de una película.
     Ejemplo: /votos_titulo/Titanic
 
 ### 5. **Información de un Actor**
+    ```
     Ruta: /get_actor/{nombre_actor}
     Descripción: Detalla la cantidad de filmaciones, retorno total y promedio de un actor.
     Ejemplo: /get_actor/Leonardo%20DiCaprio
 
 ### 6. **Información de un Director**
+    ```
     Ruta: /get_director/{nombre_director}
     Descripción: Proporciona datos de las películas dirigidas por un director, incluyendo presupuesto, ingresos y retorno.
     Ejemplo: /get_director/Christopher%20Nolan
 
 ### 7. **Recomendación de Películas**
+    ```
     Ruta: /recommend/
     Parámetros:
     movie_title (str): Título de la película de referencia.
@@ -99,14 +106,22 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 
 ## Arquitectura del Proyecto
-```css
-📁 data/
-  └── 📁 procesado/
-      ├── credits_pilabs.parquet
-      └── movies_pilabs.parquet
-📄 main.py
-📄 requirements.txt
+    ```css
+    📁 data/
+    └── 📁 procesado/
+        ├── credits_pilabs.parquet
+        └── movies_pilabs.parquet
+    📁 notebooks/
+        ├── 📄 etl_credits.ipynb
+        ├── 📄 etl_movies.ipynb
+        └── 📄 modelo.ipynb
+    📁 reports/
+        └── 📄 eda.ipynb
+    📁 src/
+        └── 📄 requirements.txt
+    📄 main.py
 
+---
 
 ## Detalles Técnicos
     1. Preprocesamiento:
@@ -119,6 +134,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
         Se utiliza NearestNeighbors con métrica de similitud coseno para encontrar películas similares.
 
+---
 
 ## Requisitos del Sistema 🖥️
 
@@ -128,6 +144,7 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
     - Scikit-learn
     - Archivos parquet con los datos procesados.
 
+---
 
 ## Ejecución del Proyecto ▶️
 
@@ -138,3 +155,5 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 2 .Accede a la documentación interactiva de la API en: http://127.0.0.1:8000/docs
 
 3. Explora los endpoints y prueba sus funcionalidades.
+
+---
