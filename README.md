@@ -67,65 +67,65 @@ Este proyecto es una API desarrollada con **FastAPI** que permite realizar diver
 
 ### 2. **Cantidad de Filmaciones por Día**
     
-Ruta: `/cantidad_filmaciones_dia/{dia}`
-Descripción: Retorna la cantidad de películas estrenadas en un día específico de la semana.
-Ejemplo: `/cantidad_filmaciones_dia/lunes`
+- Ruta: `/cantidad_filmaciones_dia/{dia}`
+- Descripción: Retorna la cantidad de películas estrenadas en un día específico de la semana.
+- Ejemplo: `/cantidad_filmaciones_dia/lunes`
     
 
 ### 3. **Score de una Película**
     
-    Ruta: `/score_titulo/{titulo_de_la_filmacion}`
-    Descripción: Muestra el título, año de estreno y popularidad de una película.
-    Ejemplo: `/score_titulo/Titanic`
+- Ruta: `/score_titulo/{titulo_de_la_filmacion}`
+- Descripción: Muestra el título, año de estreno y popularidad de una película.
+- Ejemplo: `/score_titulo/Titanic`
     
 
 ### 4. **Votos de una Película**
     
-    Ruta: `/votos_titulo/{titulo_de_la_filmacion}`
-    Descripción: Retorna la cantidad de votos, promedio y año de estreno de una película.
-    Ejemplo: `/votos_titulo/Titanic`
+- Ruta: `/votos_titulo/{titulo_de_la_filmacion}`
+- Descripción: Retorna la cantidad de votos, promedio y año de estreno de una película.
+- Ejemplo: `/votos_titulo/Titanic`
     
 
 ### 5. **Información de un Actor**
     
-    Ruta: `/get_actor/{nombre_actor}`
-    Descripción: Detalla la cantidad de filmaciones, retorno total y promedio de un actor.
-    Ejemplo: `/get_actor/Leonardo%20DiCaprio`
+- Ruta: `/get_actor/{nombre_actor}`
+- Descripción: Detalla la cantidad de filmaciones, retorno total y promedio de un actor.
+- Ejemplo: `/get_actor/Leonardo%20DiCaprio`
     
 
 ### 6. **Información de un Director**
     
-    Ruta: `/get_director/{nombre_director}`
-    Descripción: Proporciona datos de las películas dirigidas por un director, incluyendo presupuesto, ingresos y retorno.
-    Ejemplo: `/get_director/Christopher%20Nolan`
+- Ruta: `/get_director/{nombre_director}`
+- Descripción: Proporciona datos de las películas dirigidas por un director, incluyendo presupuesto, ingresos y retorno.
+- Ejemplo: `/get_director/Christopher%20Nolan`
     
 
 ### 7. **Recomendación de Películas**
     
-    Ruta: `/recommend/`
-    Parámetros:
-    movie_title (str): Título de la película de referencia.
-    num_recommendations (int, opcional): Número de recomendaciones (por defecto 5).
-    Descripción: Genera una lista de películas similares en base a géneros.
-    Ejemplo: `/recommend/?movie_title=Inception&num_recommendations=5`
+- Ruta: `/recommend/`
+- Parámetros:
+    `movie_title` (str): Título de la película de referencia.
+    `num_recommendations` (int, opcional): Número de recomendaciones (por defecto 5).
+- Descripción: Genera una lista de películas similares en base a géneros.
+- Ejemplo: `/recommend/?movie_title=Inception&num_recommendations=5`
     
 ---
 
 ## Arquitectura del Proyecto
    
-    📁 data/
-    └── 📁 procesado/
-        ├── credits_pilabs.parquet
-        └── movies_pilabs.parquet
-    📁 notebooks/
-        ├── 📄 etl_credits.ipynb
-        ├── 📄 etl_movies.ipynb
-        └── 📄 modelo.ipynb
-    📁 reports/
-        └── 📄 eda.ipynb
-    📁 src/
-        └── 📄 requirements.txt
-    📄 main.py
+📁 data/
+└── 📁 procesado/
+    ├── credits_pilabs.parquet
+    └── movies_pilabs.parquet
+📁 notebooks/
+    ├── 📄 etl_credits.ipynb
+    ├── 📄 etl_movies.ipynb
+    └── 📄 modelo.ipynb
+📁 reports/
+    └── 📄 eda.ipynb
+📁 src/
+    └── 📄 requirements.txt
+📄 main.py
     
 ---
 
@@ -133,23 +133,23 @@ Ejemplo: `/cantidad_filmaciones_dia/lunes`
 
 1. **Preprocesamiento:**
 
-        - Los archivos `parquet` son leídos y procesados con `pandas`
-        - La columna `release_date` se convierte a formato `datetime` para consultas temporales.
-        - Los géneros son codificados mediante `OneHotEncoder` para alimentar al modelo de recomendaciones.
+- Los archivos `parquet` son leídos y procesados con `pandas`
+- La columna `release_date` se convierte a formato `datetime` para consultas temporales.
+- Los géneros son codificados mediante `OneHotEncoder` para alimentar al modelo de recomendaciones.
     
 2. **Modelo de Recomendación:**
 
-        - Se utiliza `NearestNeighbors` con métrica de similitud coseno para encontrar películas similares.
+- Se utiliza `NearestNeighbors` con métrica de similitud coseno para encontrar películas similares.
     
 ---
 
 ## Requisitos del Sistema 🖥️
 
-    - Python 3.9+
-    - FastAPI
-    - Pandas
-    - Scikit-learn
-    - Archivos parquet con los datos procesados.
+- Python 3.9+
+- FastAPI
+- Pandas
+- Scikit-learn
+- Archivos parquet con los datos procesados.
 
 ---
 
